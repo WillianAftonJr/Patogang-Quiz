@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME TO LABIRINTO</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        #img-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        #background-audio {
+            display: none; /* Para não exibir o player de áudio */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="img-container">
+        <picture>
+            <img src="dddd (1).png" alt="Imagem">
+        </picture>
+    </div>
+
+    <audio id="background-audio" autoplay loop>
+        <source src="Fnaf 4 Nightmare Jumpscare.mp3" type="audio/mp3">
+        Seu navegador não suporta a tag de áudio.
+    </audio>
+
+    <script>
+        // Aguarda um breve intervalo para garantir que o áudio tenha iniciado
+        setTimeout(function() {
+            var audio = document.getElementById("background-audio");
+
+            // Verifica se o áudio está pronto para ser reproduzido
+            if (audio.readyState >= 2) {
+                audio.play();
+            } else {
+                // Em alguns casos, o áudio pode precisar de mais tempo para carregar
+                audio.addEventListener('canplaythrough', function() {
+                    audio.play();
+                });
+            }
+
+            // Fecha a página após 5 segundos
+            setTimeout(function() {
+                window.close();
+            }, 5000);
+        }, 1000); // Espera 1 segundo antes de verificar e iniciar o áudio
+    </script>
+    
+</body>
+</html>
