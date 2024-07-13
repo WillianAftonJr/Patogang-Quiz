@@ -49,18 +49,14 @@ ul {
 ul > li > a {
     font-size: 1.4em;
     text-decoration: none;
-    font-family: 'Oswald', 'Arial', 'sans-serif';
-
 }
 
 ul > li > a:hover {
     font-size: 1.7em;
     transition-duration: 0.2s;
-    font-family: 'Oswald', 'Arial', 'sans-serif';
-
 } 
 
 h1 {
-  font-weight: 0;
+    font-weight: bold;
   line-height: 75px;
 }
